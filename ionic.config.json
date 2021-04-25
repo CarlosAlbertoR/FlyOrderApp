@@ -1,0 +1,7 @@
+{
+  "name": "FlyOrderApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
