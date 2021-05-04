@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../../assets/fonts/Roboto.woff2') format('woff');
+    font-weight: bold;
+    //   font-style: normal;
+}
+
+ion-content {
+    text-align: center;
+    font-family: 'Roboto';
+}
+
+ion-title {
+    font-family: 'Roboto';
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+ion-textarea {
+    font-family: 'Roboto';
+    font-weight: light;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 17px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-family: 'Roboto';
+    font-weight: 300;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.location-img {
+    margin: auto;
+    margin-top: 0;
+    height: 215px;
+    width: 226px;
+}
+
+.buttons {
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.button {
+    width: 46%;
+    text-transform: none;
+}

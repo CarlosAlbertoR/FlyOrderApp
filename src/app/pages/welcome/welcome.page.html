@@ -1,0 +1,27 @@
+<!--
+<ion-header>
+    <ion-toolbar>
+        <ion-title>welcome</ion-title>
+    </ion-toolbar>
+</ion-header>
+-->
+<ion-content color="dark">
+    <ion-title>BIENVENIDO</ion-title>
+    <ion-textarea>La mejor forma de explorar la gastronomía de tu ciudad a un click de distancia. Comencemos!
+    </ion-textarea>
+    <ion-thumbnail class="location-img">
+        <img src="../../../assets/img/logo.svg" />
+    </ion-thumbnail>
+    <ion-text>
+        <h2>Permitir Localización</h2>
+    </ion-text>
+    <ion-textarea>Para ofrecerte una mejor experiencia y recomendarte establecimientos en tu área</ion-textarea>
+    <ion-segment class="buttons">
+        <ion-button expand="block" fill="outline" shape="round" color="light" class="button">
+            Omitir
+        </ion-button>
+        <ion-button (click)="routingSignup()" expand="block" fill="solid" shape="round" color="light">
+            Permitir
+        </ion-button>
+    </ion-segment>
+</ion-content>
