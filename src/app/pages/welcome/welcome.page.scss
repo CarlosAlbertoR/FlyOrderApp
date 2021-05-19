@@ -11,6 +11,7 @@ ion-content {
 }
 
 ion-title {
+    display: block;
     font-family: 'Roboto';
     font-weight: bold;
     margin-top: 30px;
@@ -18,25 +19,36 @@ ion-title {
 }
 
 ion-textarea {
+    display: inline-block;
     font-family: 'Roboto';
     font-weight: light;
     font-size: 16px;
     letter-spacing: 2px;
     line-height: 17px;
-    margin: auto;
+    margin: 70px auto;
     padding: 0 20px;
 }
 
-h2 {
+ion-text h2 {
     font-family: 'Roboto';
-    font-weight: 300;
+    font-weight: light;
     margin-bottom: 20px;
     margin-top: 30px;
 }
 
+.description-location {
+    display: inline-block;
+    font-family: 'Roboto';
+    font-weight: light;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 17px;
+    padding: 0 20px;
+}
+
 .location-img {
     margin: auto;
-    margin-top: 0;
+    margin-top: -70px;
     height: 215px;
     width: 226px;
 }
@@ -44,7 +56,8 @@ h2 {
 .buttons {
     justify-content: space-between;
     width: 90%;
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 30px;
 }
 
 .button {

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiLoginUrl: 'https://fly-order-login.herokuapp.com'
 };
