@@ -12,27 +12,71 @@
 
     <ion-text class="title">FLY ORDER</ion-text>
 
-    <ion-item color="dark" style="margin-top: 40px;">
-        <ion-input type="text" [(ngModel)]="client.name" placeholder="Nombre Completo"></ion-input>
-    </ion-item>
-    <ion-item color="dark">
-        <ion-input type="text" [(ngModel)]="client.address" placeholder="Dirección"></ion-input>
-    </ion-item>
-    <ion-item color="dark">
-        <ion-input type="text" [(ngModel)]="client.city" placeholder="Ciudad"></ion-input>
-    </ion-item>
-    <ion-item color="dark">
-        <ion-input type="text" [(ngModel)]="client.phone" placeholder="Celular"></ion-input>
-    </ion-item>
-    <ion-item color="dark">
-        <ion-input type="text" [(ngModel)]="client.email" placeholder="Correo electrónico"></ion-input>
-    </ion-item>
-    <ion-item color="dark">
-        <ion-input type="password" [(ngModel)]="client.password" placeholder="Contraseña"></ion-input>
-    </ion-item>
-    <ion-item color="dark">
-        <ion-input type="password" placeholder="Confirmar Contraseña"></ion-input>
-    </ion-item>
+    <form [formGroup]="form">
+        <ion-item color="dark" style="margin-top: 40px;">
+            <ion-icon name="person-sharp"></ion-icon>
+            <ion-input type="text" [(ngModel)]="client.name" placeholder="Nombre Completo" formControlName="name">
+            </ion-input>
+        </ion-item>
+        <ion-item color="dark" *ngIf="form.controls.name.dirty && form.controls.name.invalid">
+            <p *ngIf="form.controls.name.errors.required">Nombre requerido</p>
+            <p *ngIf="form.controls.name.errors.pattern">El nombre ingresado no es válido</p><br>
+            <p *ngIf="form.controls.name.errors.minlength">El nombre debe tener al menos 6 caracteres</p>
+        </ion-item>
+        <ion-item color="dark">
+            <ion-icon name="locate-sharp"></ion-icon>
+            <ion-input type="text" [(ngModel)]="client.address" placeholder="Dirección" formControlName="address">
+            </ion-input>
+        </ion-item>
+        <ion-item color="dark" *ngIf="form.controls.address.dirty && form.controls.address.invalid">
+            <p *ngIf="form.controls.address.errors.required">Dirección requerida</p>
+            <p *ngIf="form.controls.address.errors.minlength">La dirección ingresasa no es valida</p>
+        </ion-item>
+        <ion-item color="dark">
+            <ion-icon name="map-sharp"></ion-icon>
+            <ion-input type="text" [(ngModel)]="client.city" placeholder="Ciudad" formControlName="city"></ion-input>
+        </ion-item>
+        <ion-item color="dark" *ngIf="form.controls.city.dirty && form.controls.city.invalid">
+            <p *ngIf="form.controls.city.errors.required">Ciudad requerida</p>
+            <p *ngIf="form.controls.city.errors.pattern">La ciudad ingresada no es válida</p><br>
+        </ion-item>
+        <ion-item color="dark">
+            <ion-icon name="phone-portrait-sharp"></ion-icon>
+            <ion-input type="text" [(ngModel)]="client.phone" placeholder="Celular" formControlName="phone"></ion-input>
+        </ion-item>
+        <ion-item color="dark" *ngIf="form.controls.phone.dirty && form.controls.phone.invalid">
+            <p *ngIf="form.controls.phone.errors.required">Número de celular requerido</p>
+            <p *ngIf="form.controls.phone.errors.pattern">El número ingresado no es válido</p><br>
+        </ion-item>
+        <ion-item color="dark" >
+            <ion-icon name="mail-sharp"></ion-icon>
+            <ion-input type="text" [(ngModel)]="client.email" placeholder="Correo electrónico" formControlName="email">
+            </ion-input>
+        </ion-item>
+        <ion-item color="dark" *ngIf="form.controls.email.dirty && form.controls.email.invalid">
+            <p *ngIf="form.controls.email.errors.required">Correo Electrónico requerido</p>
+            <p *ngIf="form.controls.email.errors.pattern">Correo Electrónico Invalido</p>
+        </ion-item>
+        <ion-item color="dark">
+            <ion-icon name="lock-closed-sharp"></ion-icon>
+            <ion-input type="password" [(ngModel)]="client.password" placeholder="Contraseña"
+                formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item color="dark" *ngIf="form.controls.password.dirty && form.controls.password.invalid">
+            <p *ngIf="form.controls.password.errors.required">Contraseña requerida</p>
+            <p *ngIf="form.controls.password.errors.pattern">La contraseña debe contener mayúsculas, minúsculas y número</p><br>
+            <p *ngIf="form.controls.password.errors.minlength">La contraseña debe tener al menos 8 caracteres</p>
+        </ion-item>
+        <ion-item color="dark">
+            <ion-icon name="lock-closed-sharp"></ion-icon>
+            <ion-input type="password" placeholder="Confirmar Contraseña" formControlName="password_check"></ion-input>
+        </ion-item>
+        <ion-item color="dark" *ngIf="form.controls.password.dirty && form.controls.password.invalid">
+            <p *ngIf="form.controls.password.errors.required">Campo requerida</p>
+            <p *ngIf="form.controls.password.errors.pattern">La contraseña debe contener mayúsculas, minúsculas y número</p><br>
+            <p *ngIf="form.controls.password.errors.minlength">La contraseña debe tener al menos 8 caracteres</p>
+        </ion-item>
+    </form>
 
     <ion-button (click)="register(client)" shape="round" color="light" expand="block" class="button">Registrarme
     </ion-button>

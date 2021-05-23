@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Roboto';
-    src: url('../../../assets/fonts/Roboto.woff2') format('woff');
+    font-family: "Roboto";
+    src: url("../../../assets/fonts/Roboto.woff2") format("woff");
     font-weight: bold;
     //   font-style: normal;
 }
@@ -12,7 +12,7 @@ ion-toolbar {
 
 ion-content {
     text-align: center;
-    font-family: 'Roboto';
+    font-family: "Roboto";
 }
 
 ion-title {
@@ -24,6 +24,18 @@ ion-title {
 ion-item {
     margin: auto;
     width: 70%;
+}
+
+p {
+    font-size: 0.8em;
+    color: #f10000;
+    padding: 0px;
+    margin: 0;
+    
+}
+ion-icon {
+    margin-right: 10px;
+    width: 20px;
 }
 
 ion-nav-link {
