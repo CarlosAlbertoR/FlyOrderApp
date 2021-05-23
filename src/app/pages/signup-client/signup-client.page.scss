@@ -2,7 +2,6 @@
     font-family: "Roboto";
     src: url("../../../assets/fonts/Roboto.woff2") format("woff");
     font-weight: bold;
-    //   font-style: normal;
 }
 
 ion-toolbar {
@@ -31,8 +30,8 @@ p {
     color: #f10000;
     padding: 0px;
     margin: 0;
-    
 }
+
 ion-icon {
     margin-right: 10px;
     width: 20px;
@@ -57,4 +56,16 @@ ion-nav-link {
 
 .title {
     font-size: 16px;
+}
+
+.invalid {
+    display: block;
+    margin: 0px auto;
+    position: relative;
+    height: auto;
+    .invalid-text {
+        display: block;
+        position: absolute;
+        margin: 0px auto;
+    }
 }

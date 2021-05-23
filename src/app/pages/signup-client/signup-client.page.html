@@ -21,7 +21,6 @@
         <ion-item color="dark" *ngIf="form.controls.name.dirty && form.controls.name.invalid">
             <p *ngIf="form.controls.name.errors.required">Nombre requerido</p>
             <p *ngIf="form.controls.name.errors.pattern">El nombre ingresado no es válido</p><br>
-            <p *ngIf="form.controls.name.errors.minlength">El nombre debe tener al menos 6 caracteres</p>
         </ion-item>
         <ion-item color="dark">
             <ion-icon name="locate-sharp"></ion-icon>
@@ -48,7 +47,7 @@
             <p *ngIf="form.controls.phone.errors.required">Número de celular requerido</p>
             <p *ngIf="form.controls.phone.errors.pattern">El número ingresado no es válido</p><br>
         </ion-item>
-        <ion-item color="dark" >
+        <ion-item color="dark">
             <ion-icon name="mail-sharp"></ion-icon>
             <ion-input type="text" [(ngModel)]="client.email" placeholder="Correo electrónico" formControlName="email">
             </ion-input>
@@ -62,24 +61,29 @@
             <ion-input type="password" [(ngModel)]="client.password" placeholder="Contraseña"
                 formControlName="password"></ion-input>
         </ion-item>
-        <ion-item color="dark" *ngIf="form.controls.password.dirty && form.controls.password.invalid">
-            <p *ngIf="form.controls.password.errors.required">Contraseña requerida</p>
-            <p *ngIf="form.controls.password.errors.pattern">La contraseña debe contener mayúsculas, minúsculas y número</p><br>
-            <p *ngIf="form.controls.password.errors.minlength">La contraseña debe tener al menos 8 caracteres</p>
+        <ion-item class="invalid" color="dark" *ngIf="form.controls.password.dirty && form.controls.password.invalid">
+            <div class="invalid-text">
+                <p *ngIf="form.controls.password.errors.required">Campo requerido</p>
+            </div>
+            <div class="invalid-text">
+                <p *ngIf="form.controls.password.errors.pattern">La contraseña debe contener mayúsculas, minúsculas y
+                    número</p>
+            </div>
+            <div class="invalid-text">
+                <p *ngIf="form.controls.password.errors.minlength">La contraseña debe tener al menos 8 caracteres</p>
+            </div>
         </ion-item>
         <ion-item color="dark">
             <ion-icon name="lock-closed-sharp"></ion-icon>
             <ion-input type="password" placeholder="Confirmar Contraseña" formControlName="password_check"></ion-input>
         </ion-item>
-        <ion-item color="dark" *ngIf="form.controls.password.dirty && form.controls.password.invalid">
-            <p *ngIf="form.controls.password.errors.required">Campo requerida</p>
-            <p *ngIf="form.controls.password.errors.pattern">La contraseña debe contener mayúsculas, minúsculas y número</p><br>
-            <p *ngIf="form.controls.password.errors.minlength">La contraseña debe tener al menos 8 caracteres</p>
+        <ion-item color="dark" *ngIf="form.controls.password_check.dirty && form.controls.password_check.invalid">
+            <p *ngIf="form.controls.password_check.errors.required">Campo requerido</p>
+            <p *ngIf="form.controls.password_check.errors.confirmedValidator">Las contraseñas no coinciden</p>
         </ion-item>
+        <ion-button (click)="register(client)" shape="round" color="light" expand="block" class="button" [disabled]="!form.valid">Registrarme
+        </ion-button>
     </form>
-
-    <ion-button (click)="register(client)" shape="round" color="light" expand="block" class="button">Registrarme
-    </ion-button>
 
     <ion-nav-link routerDirection="back" component="nav-profile" (click)="routingSignin()">Ya tengo cuenta.
     </ion-nav-link>
